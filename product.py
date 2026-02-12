@@ -24,7 +24,7 @@ class Customer:
         self.contact_no = contact_no
 
     def display_customer(self):
-        print("\n--- Customer Details ---")
+        print("\n---- Customer Details ----")
         print(f"Customer ID: {self.customer_id}")
         print(f"Gender: {self.gender}")
         print(f"Name: {self.name}")
@@ -43,7 +43,7 @@ class Invoice:
     def calculate_total(self):
         total = 0
         for product in self.products:
-            total += product.unit_price * product.quantity
+            total = total + (product.unit_price * product.quantity)
         return total
 
     def display_invoice(self):
@@ -63,7 +63,7 @@ class PaymentHistory:
         self.invoice_no = invoice_no
 
     def display_payment(self):
-        print("\n--- Payment History ---")
+        print("\n---- Payment History ----")
         print(f"Customer ID: {self.customer_id}")
         print(f"Invoice No: {self.invoice_no}")
 
@@ -102,7 +102,7 @@ invoice1 = Invoice(invoice_no, date, products)
 payment1 = PaymentHistory(customer_id, invoice_no)
 
 
-print("\n==============================")
+print("\n*********************************")
 customer1.display_customer()
 invoice1.display_invoice()
 payment1.display_payment()
